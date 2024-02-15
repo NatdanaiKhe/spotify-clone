@@ -13,13 +13,13 @@ function SideBar() {
       <Card $height="112px">
         <ul className="side-menu-list">
           <li className="menu-list">
-            <a className="list-item">
+            <a className="list-item" href="/">
               <img src={HomeIcon} />
               <span>Home</span>
             </a>
           </li>
           <li className="menu-list">
-            <a className="list-item">
+            <a className="list-item" href="/search">
               <img src={BrowseIcon} />
               <span>Search</span>
             </a>
