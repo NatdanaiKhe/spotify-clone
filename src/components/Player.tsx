@@ -1,6 +1,6 @@
 import "./Player.css";
-import useSound from "use-sound";
 import { useState, useEffect } from "react";
+import useSound from "use-sound";
 import PlayIcon from "../assets/icons/Play.svg";
 import ShuffleIcon from "../assets/icons/Button Suffle.svg";
 import PreviousIcon from "../assets/icons/Previous Playlist.svg";
@@ -41,8 +41,8 @@ function Player() {
       const min = Math.floor(sec / 60);
       const secRemain = Math.floor(sec % 60);
       setTime({
-        min: min,
-        sec: secRemain,
+        min: min.toString(),
+        sec: secRemain.toString(),
       });
     }
   }, [isPlaying]);
@@ -54,8 +54,8 @@ function Player() {
         const min = Math.floor(sound.seek([]) / 60);
         const sec = Math.floor(sound.seek([]) % 60);
         setCurrTime({
-          min,
-          sec,
+          min: min.toString(),
+          sec: sec.toString(),
         });
       }
     }, 1000);
@@ -147,8 +147,8 @@ function Player() {
               max={duration / 1000}
               value={seconds}
               className="playback-progress"
-              onInput={e => {
-                sound.seek([e.target.value]);
+              onChange={e => {
+                sound.seek([e.target.value as unknown as number]);
               }}
             />
           </div>
