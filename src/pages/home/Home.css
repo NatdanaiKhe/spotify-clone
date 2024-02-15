@@ -1,0 +1,13 @@
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0px 24px;
+  overflow-y: scroll;
+}
+.card-container {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  min-width: 372px;
+}

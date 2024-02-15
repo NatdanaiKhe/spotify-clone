@@ -1,0 +1,77 @@
+.main-layout {
+  --left-sidebar-grid-area-z-index: 4;
+  --above-everything-except-now-playing-bar-z-index: 5;
+  --above-main-and-now-playing-view-grid-area: 6;
+  --now-playing-bar-grid-area-z-index: calc(
+    var(--above-everything-except-now-playing-bar-z-index) + 1
+  );
+  background-color: #000;
+  display: grid;
+  gap: 8px;
+  grid-template-areas:
+    "sidebar main-view"
+    "now-playing now-playing";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.side-bar {
+  grid-area: sidebar;
+  width: 420px;
+  overflow-y: auto;
+  z-index: var(--left-sidebar-grid-area-z-index);
+}
+.main-view {
+  grid-area: main-view;
+  overflow-y: auto;
+}
+
+.now-playing {
+  grid-area: now-playing;
+  width: 100%;
+  z-index: var(--now-playing-bar-grid-area-z-index);
+}
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.side-menu-list {
+  display: block;
+  padding: 8px 12px;
+}
+.menu-list {
+  display: flex;
+  padding: 4px 12px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+}
+.list-item:active,
+:visited {
+  color: white;
+}
+
+.menu-list > a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 40px;
+}
+.list-item img {
+  width: 24px;
+  height: 24px;
+}
+.list-item span {
+  font-weight: 700;
+}

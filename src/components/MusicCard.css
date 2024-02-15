@@ -1,0 +1,50 @@
+.music-card {
+  padding: 16px;
+  cursor: pointer;
+  background-color: #181818;
+}
+.music-card:hover {
+  background-color: #282828;
+}
+.cover-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.play-circle-wrapper{
+   visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
+  position: absolute;
+  top: 1;
+  left: 1;
+  bottom: 0;
+  right: 0;
+  margin:0 10px 16px 0;
+}
+
+.play-circle {
+  background-color: #1ed760;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+}
+.play-circle:hover{
+  transform: scale(1.1);
+}
+.music-card:hover .play-circle-wrapper {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cover {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
