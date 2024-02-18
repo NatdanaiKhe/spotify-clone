@@ -30,11 +30,6 @@ api.interceptors.response.use(
   }
 );
 
-const get_recommendation = async () => {
-  const response = await api.get(`recommendations?seed_artists=${id}`);
-  return response.data;
-}
-
 const refresh_token = async () => {
   try {
     const params = new URLSearchParams();
@@ -56,4 +51,19 @@ const refresh_token = async () => {
   }
 };
 
-export {get_recommendation, refresh_token}
+const get_recommendation = async () => {
+  const response = await api.get(`recommendations?seed_artists=${id}&limit=7`);
+  return response.data;
+}
+
+const search_api = async (query) => {
+  const response = await api.get(`search?q=${query}&type=track%2Cartist%2Calbum&limit=7`);
+  return response.data;
+}
+
+const get_categories = async () => {
+  const response = await api.get(`browse/categories?locale=th_TH&offset=0`);
+  return response.data;
+}
+
+export {get_recommendation, refresh_token, search_api, get_categories}

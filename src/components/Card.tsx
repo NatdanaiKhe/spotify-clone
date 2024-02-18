@@ -7,4 +7,5 @@ const Card = styled.div<{ $width?: string; $height?: string;$radius?: string }>`
   height: ${props => props.$height || "100%"};
   border-radius: ${props => props.$radius || "0.5rem"};
 `;
+
 export default Card;

@@ -3,6 +3,7 @@ import MusicCard from "../../components/MusicCard";
 import "./home.css";
 import { get_recommendation } from "../../services/music.service";
 import { useEffect, useState } from "react";
+import Loader from "../../components/Loader";
 
 function Home() {
   const [recommendations, setRecommendations] = useState<any[]>([]);
@@ -21,9 +22,7 @@ function Home() {
 
   if(loading){
     return (
-      <div className="center">
-        <div className="loader"></div>
-      </div>
+      <Loader />
     );
   }else{
     return (
